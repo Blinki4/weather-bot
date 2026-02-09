@@ -1,0 +1,7 @@
+.venv
+.env
+.idea
+today-weather-krd.png
+today-weather-novo.png
+.pytest_cache
+__pycash__
