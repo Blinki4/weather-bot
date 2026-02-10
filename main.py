@@ -1,21 +1,12 @@
 import telebot
 from telebot import types
-from api.yandex import get_weather_novo, get_weather_krd
-from utils.format_response import format_response
 from api.rp_five_parser import RpFiveParser
 from utils.handlers import send_novo_weather, send_krd_weather
+from utils.setup_env import setup_env
 
-def setup_env():
-    variables = []
-    with open('.env', 'r') as env:
-        for line in env:
-            variables.append(line.split('=')[1])
-    return variables
 
 def main():
     env = setup_env()
-
-
     bot = telebot.TeleBot(env[0])
     parser = RpFiveParser()
 

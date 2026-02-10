@@ -27,6 +27,7 @@ class RpFiveParser:
         screenshot_path = 'today-weather-krd.png'
         self.driver.get_screenshot_as_file(screenshot_path)
 
+
     def make_screenshot_novo(self):
         self.driver.get(self.NOVO_URL)
         screenshot_path = 'today-weather-novo.png'

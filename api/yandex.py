@@ -1,5 +1,4 @@
 import requests
-from dto.weather import Weather
 
 access_key = '7f7c2438-9dc3-4219-9de6-2fdcdd783aed'
 
