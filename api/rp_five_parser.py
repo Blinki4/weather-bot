@@ -11,24 +11,26 @@ class RpFiveParser:
     def __init__(self):
         options = Options()
         options.add_argument('--headless')
+        options.add_argument('--window-size=1920,1080')
         driver = webdriver.Chrome(options=options)
-        driver.maximize_window()
         self.driver = driver
 
 
-    def get_current_weather_krd(self):
-        self.driver.get(self.KRD_URL)
-        temp_now = self.driver.find_element(By.XPATH, '//div[@id="ArchTemp"]/child::span[@class="t_0"]').text
-        return temp_now
+    # def get_current_weather_krd(self):
+    #     self.driver.get(self.KRD_URL)
+    #     temp_now = self.driver.find_element(By.XPATH, '//div[@id="ArchTemp"]/child::span[@class="t_0"]').text
+    #     return temp_now
 
 
     def make_screenshot_krd(self):
         self.driver.get(self.KRD_URL)
         screenshot_path = 'today-weather-krd.png'
         self.driver.get_screenshot_as_file(screenshot_path)
+        self.driver.quit()
 
 
     def make_screenshot_novo(self):
         self.driver.get(self.NOVO_URL)
         screenshot_path = 'today-weather-novo.png'
         self.driver.get_screenshot_as_file(screenshot_path)
+        self.driver.quit()
